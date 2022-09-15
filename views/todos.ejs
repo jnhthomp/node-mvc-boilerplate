@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title> <!-- Title to display in tab -->
+    <link rel="stylesheet" href="css/style.css"> <!-- page css -->
+    <script defer src="js/main.js"></script> <!-- js for page, defer loads after page load -->
 </head>
 <body>
-    <h1>Todos</h1>
-    <ul>
+  <!-- Page heading -->
+  <h1>Todos</h1>
+  <!-- List of todo items -->
+  <ul>
+    <!-- Loop through todos array passed into ejs on render -->
     <% todos.forEach( el => { %>
-        <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-            <span class='del'> Delete </span>
-        </li>
+      <!-- Create a list item for each element -->
+      <li class='todoItem' data-id='<%=el._id%>'> <!-- add mongodb document id as data-id attribute -->
+        <!-- Display todo item text
+        -- Toggle class for display depending on completed property -->
+        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+        <!-- Add delete button to each element generated -->
+        <span class='del'> Delete </span>
+      </li>
     <% }) %>    
-    </ul>
+  </ul>
 
-    <h2>Things left to do: <%= left %></h2>
+  <!-- Output tasks where complete is false (value passed into ejs on render) -->
+  <h2>Things left to do: <%= left %></h2>
 
-    <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
-        <input type="submit">
-    </form>
-
-    <script src="js/main.js"></script>
+  <!-- For to create a new todo item -->
+  <form action="/todos/createTodo" method='POST'>
+    <input type="text" placeholder="Enter Todo Item" name='todoItem'> <!-- text input area for todo content -->
+    <input type="submit"> <!-- Submit new todo item -->
+  </form>
 </body>
 </html>

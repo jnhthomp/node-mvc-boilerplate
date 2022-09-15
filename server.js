@@ -16,5 +16,5 @@ app.use('/', homeRoutes) // root: use homeRoutes router for path
 app.use('/todos', todoRoutes) // /todos: use todos router for path
 
 app.listen(process.env.PORT, ()=>{ // Start app on port specified in .env
-    console.log(`Server started on port: ${process.env.PORT}`) // Log success on server start
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`) // Log success on server start
 })

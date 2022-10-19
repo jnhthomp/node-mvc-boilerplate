@@ -1,5 +1,5 @@
 # Node MVC Boilerplate
-<a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://jtdev-asset-server.herokuapp.com/assets/logos/png/logo-color.png" alt="JTDEV" width="100%" height="auto"/> </a> 
+<a href="https://jtdev.netlify.app/" target="_blank" rel="noreferrer"> <img src="https://jtdev-asset-server.web.app//assets/logos/png/logo-color.png" alt="JTDEV" width="100%" height="auto"/> </a> 
 This is used as a starting point for my MVC node server applications. It serves as a good baseline and will continue to be updated with different useful dependencies and potentially different branches to provide different starting points
 
 <!-- Application gif -->
